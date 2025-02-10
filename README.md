@@ -1,4 +1,4 @@
-# FAQ Chatbot with OpenAI and SQLite
+# FAQ Chatbot with OpenAI and FastApi
 This project implements an FAQ chatbot that leverages OpenAI's GPT-3.5 API to provide conversational answers to both frequently asked questions (FAQs) and general user queries. The chatbot also stores conversation history in an SQLite database to improve contextual responses.
 
 ## Features:
@@ -96,6 +96,3 @@ Since the application is dockerized, you can deploy it on any platform that supp
 
 Q5: How does the chatbot handle general conversation?
 The chatbot is designed to understand and respond to general statements like greetings or personal introductions. These responses are defined in the general_responses dictionary in the backend.
-
-## License:
-This project is licensed under the MIT License.
