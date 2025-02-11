@@ -3,9 +3,13 @@ This project implements an FAQ chatbot that leverages OpenAI's GPT-3.5 API to pr
 
 ## Features:
 FAQ-based responses: Answer questions from a predefined set of FAQs.
+
 General conversation: Handles general conversational inputs like greetings and introductions.
+
 Database support: Stores conversation history in an SQLite database.
+
 OpenAI integration: Uses OpenAI GPT-3.5 for fallback responses with conversation context.
+
 Dockerized application: The project is dockerized for easy deployment.
 
 ## Tech Stack:
