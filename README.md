@@ -25,8 +25,9 @@ Dockerized application: The project is dockerized for easy deployment.
 
 ## Setup Instructions:
 1. Clone the repository:
+```bash
 git clone https://github.com/your-username/faq-chatbot.git
-
+```
 2. Install dependencies:
 
  - Option 1: Using Docker (Recommended)
@@ -34,29 +35,51 @@ git clone https://github.com/your-username/faq-chatbot.git
    - This project is dockerized for easy deployment.
    
    - Build the Docker container:
+
+   ```bash
    docker-compose build
-   
+   ```
    - Start the application:
+
+   ```bash
    docker-compose up
+   ```
  
  - Option 2: Local Development (Without Docker)
  
    - Create a virtual environment:
+
+   ```bash
    python3 -m venv venv
+   ```
    
    - Activate the virtual environment:
    
-    - On Windows: venv\Scripts\activate
-    - On macOS/Linux: source venv/bin/activate
+    - On Windows:
+  
+      ```bash
+      venv\Scripts\activate
+      ```
+    - On macOS/Linux:
+
+      ```bash
+      source venv/bin/activate
+      ```
    
    - Install dependencies:
+
+   ```bash
    pip install -r requirements.txt
+   ```
    
    - Set up your .env file (create one in the root directory):
    OPENAI_API_KEY=your-openai-api-key
    
    - Start the application:
+
+   ```bash
    uvicorn main:app --reload
+   ```
 
 ## 3. Application URL:
 Once the server is up, the API will be running at http://127.0.0.1:8000
