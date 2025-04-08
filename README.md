@@ -2,15 +2,15 @@
 This project implements an FAQ chatbot that leverages OpenAI's GPT-3.5 API to provide conversational answers to both frequently asked questions (FAQs) and general user queries. The chatbot also stores conversation history in an SQLite database to improve contextual responses.
 
 ## Features:
-FAQ-based responses: Answer questions from a predefined set of FAQs.
+- FAQ-based responses: Answer questions from a predefined set of FAQs.
 
-General conversation: Handles general conversational inputs like greetings and introductions.
+- General conversation: Handles general conversational inputs like greetings and introductions.
 
-Database support: Stores conversation history in an SQLite database.
+- Database support: Stores conversation history in an SQLite database.
 
-OpenAI integration: Uses OpenAI GPT-3.5 for fallback responses with conversation context.
+- OpenAI integration: Uses OpenAI GPT-3.5 for fallback responses with conversation context.
 
-Dockerized application: The project is dockerized for easy deployment.
+- Dockerized application: The project is dockerized for easy deployment.
 
 ## Tech Stack:
  - Backend: FastAPI, OpenAI API
@@ -69,7 +69,10 @@ git clone https://github.com/your-username/faq-chatbot.git
    - Install dependencies:
 
    ```bash
-   pip install -r requirements.txt
+   pip install -r frontend/requirements.txt
+   ```
+   ```bash
+   pip install -r backend/requirements.txt
    ```
    
    - Set up your .env file (create one in the root directory):
