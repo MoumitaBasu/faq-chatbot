@@ -2,15 +2,17 @@
 This project implements an FAQ chatbot that leverages OpenAI's GPT-3.5 API to provide conversational answers to both frequently asked questions (FAQs) and general user queries. The chatbot also stores conversation history in an SQLite database to improve contextual responses.
 
 ## Features:
-- FAQ-based responses: Answer questions from a predefined set of FAQs.
+- NLP-enhanced FAQ matching: User queries are preprocessed and semantically matched against a predefined FAQ dataset using sentence embeddings (e.g., sentence-transformers) for fast and accurate responses without always calling GPT.
 
-- General conversation: Handles general conversational inputs like greetings and introductions.
+- Intent classification: Basic NLP models classify user intent (e.g., greeting, info request, help) to determine how to respond — whether to use a canned response, FAQ, or pass to GPT.
 
-- Database support: Stores conversation history in an SQLite database.
+- General conversation handling: Leverages OpenAI GPT-3.5 for more complex or open-ended queries with conversation context.
 
-- OpenAI integration: Uses OpenAI GPT-3.5 for fallback responses with conversation context.
+- Conversation memory: Stores chat history in an SQLite database to maintain context across turns.
 
-- Dockerized application: The project is dockerized for easy deployment.
+- Preprocessing pipeline: User inputs are cleaned, normalized, and optionally corrected using standard NLP techniques (tokenization, lemmatization, etc.) before matching or sending to GPT.
+
+- Dockerized: Fully containerized setup for easy deployment on any platform.
 
 ## Tech Stack:
  - Backend: FastAPI, OpenAI API
@@ -22,6 +24,7 @@ This project implements an FAQ chatbot that leverages OpenAI's GPT-3.5 API to pr
 - Python 3.7+
 - Docker
 - Docker Compose (if needed)
+- NLP Models: sentence-transformers, spaCy
 
 ## Setup Instructions:
 1. Clone the repository:
@@ -99,6 +102,17 @@ Response:
 {
   "answer": "I am an FAQ chatbot here to assist you with common questions."
 }
+
+## NLP Pipeline & Intelligence:
+FAQ Matching: User queries are semantically matched against faqs.json using vector embeddings for high-accuracy lookup.
+
+Intent Detection: NLP classifies whether the message is a greeting, question, or fallback.
+
+Text Preprocessing: Stop-word removal, lemmatization, normalization.
+
+Sentiment & Entity Extraction (optional): For enhancing response tone or personalization.
+
+Contextual GPT: GPT is used when no FAQ match is found, with recent conversation history sent as context.
 
 ## Database:
 The project uses SQLite to store conversation history. The table conversation_history contains the following columns:
